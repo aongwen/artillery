@@ -13,5 +13,6 @@ COPY util.js util.js
 COPY package.json package.json
 
 RUN npm --ignore-scripts --production install
-
+RUN npm fund
+RUN npm audit fix
 ENTRYPOINT ["/home/node/artillery/bin/artillery"]
